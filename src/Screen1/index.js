@@ -8,11 +8,13 @@ class Screen1 extends Component {
         super(props);
         this.state = {
             brands: [],
-
+            brandWiseCars: [],
+            carList: [],
         }
     }
     componentDidMount(){               
         carList().then(response => {
+            this.setState({ carList: response || []})
             var sortedListOfMake = [];
             var sortedList = [];
             for(let car of response){
@@ -29,13 +31,21 @@ class Screen1 extends Component {
         })
     }
 
+    sortCarByBrand(brand){
+        //alert(brand);
+        var result = [];
+        var tempList = this.state.carList;
+        var result = tempList.filter(obj => (obj.make === brand));
+        this.setState({brandWiseCars: result});
+    }
+
     render(){
         return (
             <div className="App">
               {this.state.brands.map((brand) =>{
-                  return <Link to="/make">
+                  return <Link to="/make" carList = {this.state.brandWiseCars} onClick = {() => this.sortCarByBrand(brand.brand)}>
                       <div>{brand.brand}</div>
-                  <div>{brand.logo}</div>
+                  <img src= {brand.logo} />
                   </Link>                  
               })
             }
