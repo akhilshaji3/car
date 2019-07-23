@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {carList} from '../API/car';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'; 
+import './Screen1.css';
 
 
 class Screen1 extends Component {
@@ -14,14 +15,14 @@ class Screen1 extends Component {
     }
     componentDidMount(){               
         carList().then(response => {
-            this.setState({ carList: response || []})
-            var sortedListOfMake = [];
-            var sortedList = [];
+             this.setState({ carList: response || []})
+             var sortedListOfMake = [];
+             var sortedList = [];
             for(let car of response){
                 if(sortedListOfMake.indexOf(car.make) == -1)
                 {
                     sortedListOfMake.push(car.make)
-                    sortedList.push({brand: car.make, logo: car.logo});
+                    sortedList.push({brand: car.make, logo: car.logo, cars: this.sortCarByBrand(car.make)});
                 }
                 
             }
@@ -35,18 +36,29 @@ class Screen1 extends Component {
         //alert(brand);
         var result = [];
         var tempList = this.state.carList;
-        var result = tempList.filter(obj => (obj.make === brand));
-        this.setState({brandWiseCars: result});
+        result = tempList.filter(obj => (obj.make === brand));
+        return result;
     }
 
     render(){
         return (
-            <div className="App">
+            <div className="screen1-grid-container">
               {this.state.brands.map((brand) =>{
-                  return <Link to="/make" carList = {this.state.brandWiseCars} onClick = {() => this.sortCarByBrand(brand.brand)}>
-                      <div>{brand.brand}</div>
-                  <img src= {brand.logo} />
-                  </Link>                  
+                  console.log(brand);
+                  return <div className = "screen1-brands">
+                      <Link to={{
+                    pathname: '/make',
+                    state: {
+                      carList: brand.cars
+                    }
+                  }} >
+                      <div className="screen1-brand-container">
+                      <img className = "screen1-brandlogo" src= {brand.logo} />
+                      <h3 className = "screen1-brandName">{brand.brand}</h3>
+                      </div>
+                                        
+                  </Link> 
+                  </div>                                   
               })
             }
             </div>

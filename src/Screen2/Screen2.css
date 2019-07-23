@@ -1,0 +1,40 @@
+.screen2-grid-container{
+    display: grid;
+    grid-template-columns: auto ;
+    padding: 10px;
+    /* background-color: #2196F3;  */
+    grid-gap: 20px;
+    /* max-width: 800pxS/; */
+}
+.screen2-brands{
+    padding: 20px;
+    /* max-width: 500px; */
+}
+.screen2-brandlogo{
+    max-width: 200px;
+}
+
+.screen2-brand-container{
+    display: grid;
+    /* background-color: antiquewhite; */
+    grid-template-columns: 25% auto;
+}
+.screen2-logoContainer{
+display: flex;
+align-items: center;
+justify-content: center;    
+/* background-color: aqua; */
+}
+.screen2-contentContainer{
+    
+/* background-color: blueviolet */
+}
+
+.screen2-brandName{
+    text-transform: capitalize;
+    text-decoration: none;
+}
+.screen2-brandDetails{
+    text-transform: capitalize;
+    text-decoration: none;
+}

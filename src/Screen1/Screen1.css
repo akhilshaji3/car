@@ -1,0 +1,27 @@
+.screen1-grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    /* background-color: #2196F3; */
+    grid-gap: 20px;
+}
+.screen1-brands{
+    max-width: 500px;
+}
+
+.screen1-brandlogo{
+    max-width: 200px;
+}
+.screen1-brand-container{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: antiquewhite; */
+    height: 100%;
+}
+.screen1-brandName{
+    text-transform: capitalize;
+    text-decoration: none;
+}
