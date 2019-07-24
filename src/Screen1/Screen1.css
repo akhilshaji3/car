@@ -25,3 +25,8 @@
     text-transform: capitalize;
     text-decoration: none;
 }
+.remove-link{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+}

@@ -20,7 +20,7 @@ class Screen2 extends Component {
        <div className = "screen2-grid-container">
          { carList.map((car) => {
            return <div className = "screen2-brands">
-             <Link to={{
+             <Link className= "remove-link" to={{
             pathname: '/car',
             state: {
               carDetail: car

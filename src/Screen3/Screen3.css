@@ -1,3 +1,21 @@
-.screen3-brandlogo{
-    max-width: 200px;
+.screen3-brand-container{
+    display: grid;
+    /* background-color: antiquewhite; */
+    grid-template-columns: 25% auto;
 }
+.screen3-logoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    /* background-color: aqua; */
+    }
+    .screen3-brandlogo{
+        max-width: 200px;
+    }
+    .screen3-brandName{
+        text-transform: capitalize;
+        text-decoration: none;
+    }
+    .screen3-contentContainer{
+        line-height: 30px;
+    }

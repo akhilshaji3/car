@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import './Screen3.css';
 
 class Screen3 extends Component{
   constructor(props){
@@ -18,9 +19,9 @@ class Screen3 extends Component{
         <img className = "screen3-brandlogo" src = {carDetail.logo} />        
       </div>
       <div className = "screen3-contentContainer">
-      <div className = "screen3-brandName">
-        Make: {carDetail.make}
-      </div>      
+      <h2 className = "screen3-brandName">
+         {carDetail.make}
+      </h2>      
       <div className = "screen3-brandDetails">
         Fuel Type: {carDetail.fuel_type}
       </div>

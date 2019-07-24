@@ -46,7 +46,7 @@ class Screen1 extends Component {
               {this.state.brands.map((brand) =>{
                   console.log(brand);
                   return <div className = "screen1-brands">
-                      <Link to={{
+                      <Link className = "remove-link" to={{
                     pathname: '/make',
                     state: {
                       carList: brand.cars
